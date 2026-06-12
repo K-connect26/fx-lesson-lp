@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FX3日間無料レッスン｜知らないから、怖いだけ。</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    color: #1a1a1a;
+    background: #fff;
+    line-height: 1.7;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(145deg, #0f1f4a 0%, #1a3068 60%, #0d1a40 100%);
+    color: #fff;
+    text-align: center;
+    padding: 70px 24px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 65%);
+  }
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid #C9A84C;
+    color: #C9A84C;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    padding: 6px 20px;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 7vw, 52px);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 span {
+    color: #C9A84C;
+  }
+  .hero-sub {
+    font-size: clamp(15px, 3.5vw, 20px);
+    color: #d0cec9;
+    margin-bottom: 36px;
+    position: relative;
+    z-index: 1;
+    line-height: 1.8;
+  }
+  .hero-free {
+    display: inline-block;
+    background: linear-gradient(135deg, #C9A84C, #e8c96a);
+    color: #0f1f4a;
+    font-size: clamp(18px, 4vw, 26px);
+    font-weight: 800;
+    padding: 14px 40px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-meta span {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 13px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero-meta span::before { content: '✓'; color: #C9A84C; font-weight: 700; }
+
+  /* ─── SECTIONS ─── */
+  .section {
+    padding: 64px 24px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .section-label {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    color: #C9A84C;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .section-title {
+    text-align: center;
+    font-size: clamp(22px, 5vw, 32px);
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    color: #0f1f4a;
+  }
+  .section-title span { color: #C9A84C; }
+
+  /* ─── FOR WHO ─── */
+  .forwho-bg {
+    background: #f8f6f2;
+  }
+  .forwho-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .forwho-item {
+    background: #fff;
+    border-left: 4px solid #C9A84C;
+    padding: 18px 20px;
+    border-radius: 0 8px 8px 0;
+    font-size: clamp(15px, 3.5vw, 17px);
+    font-weight: 500;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .forwho-item::before {
+    content: '✔';
+    color: #C9A84C;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  /* ─── COMPARISON ─── */
+  .comparison-bg { background: #fff; }
+  .lead-copy {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .lead-copy p {
+    font-size: clamp(15px, 3.8vw, 18px);
+    color: #444;
+    line-height: 2.0;
+  }
+  .lead-copy .box-word {
+    display: inline-block;
+    border: 2px solid #0f1f4a;
+    padding: 2px 16px;
+    font-weight: 700;
+    color: #0f1f4a;
+    margin: 0 4px;
+    font-size: clamp(16px, 4vw, 20px);
+  }
+  .lead-copy .demo {
+    font-size: clamp(22px, 6vw, 32px);
+    font-weight: 900;
+    color: #0f1f4a;
+    display: block;
+    margin: 16px 0;
+  }
+  .lead-copy .big-claim {
+    font-size: clamp(20px, 5vw, 28px);
+    font-weight: 800;
+    color: #0f1f4a;
+    line-height: 1.6;
+  }
+  .lead-copy .big-claim span { color: #C9A84C; }
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(13px, 3.2vw, 15px);
+  }
+  .comp-table th {
+    padding: 14px 12px;
+    text-align: center;
+    font-weight: 800;
+    font-size: clamp(15px, 4vw, 18px);
+  }
+  .comp-table th.th-fx {
+    background: #0f1f4a;
+    color: #C9A84C;
+    border-radius: 8px 8px 0 0;
+    letter-spacing: 0.05em;
+  }
+  .comp-table th.th-side {
+    background: #888;
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+  }
+  .comp-table th.th-label { background: transparent; }
+  .comp-table td {
+    padding: 14px 12px;
+    text-align: center;
+    border-bottom: 1px solid #e8e4dc;
+    vertical-align: middle;
+    line-height: 1.6;
+  }
+  .comp-table td.td-label {
+    font-weight: 700;
+    color: #0f1f4a;
+    text-align: left;
+    background: #f8f6f2;
+    font-size: clamp(12px, 3vw, 14px);
+  }
+  .comp-table td.td-fx {
+    background: #fffbef;
+    color: #C9A84C;
+    font-weight: 700;
+    border-left: 2px solid #0f1f4a;
+    border-right: 2px solid #0f1f4a;
+  }
+  .comp-table tr:last-child td.td-fx {
+    border-bottom: 2px solid #0f1f4a;
+    border-radius: 0 0 8px 8px;
+  }
+  .comp-table td.td-side {
+    color: #999;
+    background: #fafafa;
+  }
+  .comp-circle {
+    display: inline-block;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: 900;
+    margin-bottom: 4px;
+  }
+  .comp-circle.good { background: #C9A84C; color: #fff; }
+  .comp-circle.bad { background: #ccc; color: #fff; }
+
+  /* ─── DAYS ─── */
+  .days-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .day-card {
+    background: #fff;
+    border: 1px solid #e8e4dc;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .day-header {
+    background: linear-gradient(135deg, #0f1f4a, #1a3068);
+    color: #fff;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .day-num {
+    background: #C9A84C;
+    color: #0f1f4a;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .day-title {
+    font-size: clamp(16px, 4vw, 19px);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .day-body {
+    padding: 20px 24px;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.8;
+  }
+
+  /* ─── EASY ─── */
+  .easy-bg {
+    background: linear-gradient(145deg, #0f1f4a, #1a3068);
+  }
+  .easy-bg .section-label { color: #C9A84C; }
+  .easy-bg .section-title { color: #fff; }
+  .easy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+  .easy-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    color: #fff;
+  }
+  .easy-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .easy-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #C9A84C;
+    margin-bottom: 8px;
+  }
+  .easy-card p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.7;
+  }
+
+  /* ─── PROFILE ─── */
+  .profile-card {
+    background: #f8f6f2;
+    border-radius: 16px;
+    padding: 36px 28px;
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .profile-img-wrap {
+    flex-shrink: 0;
+  }
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 3px solid #C9A84C;
+  }
+  .profile-img-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a3068, #C9A84C);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 40px;
+    border: 3px solid #C9A84C;
+    flex-shrink: 0;
+  }
+  .profile-body h3 {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: #C9A84C;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .profile-name {
+    font-size: clamp(20px, 5vw, 26px);
+    font-weight: 700;
+    color: #0f1f4a;
+    margin-bottom: 4px;
+  }
+  .profile-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+  .profile-text {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.9;
+  }
+  .profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .profile-tag {
+    background: #0f1f4a;
+    color: #C9A84C;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* ─── CTA ─── */
+  .cta-section {
+    background: linear-gradient(145deg, #0f1f4a, #1a3068);
+    padding: 72px 24px;
+    text-align: center;
+  }
+  .cta-section .section-title {
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .cta-section .section-title span { color: #C9A84C; }
+  .cta-sub {
+    color: #ccc;
+    font-size: 16px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #C9A84C, #e8c96a);
+    color: #0f1f4a;
+    font-size: clamp(17px, 4vw, 21px);
+    font-weight: 800;
+    padding: 20px 48px;
+    border-radius: 60px;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    line-height: 1.4;
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(201,168,76,0.5);
+  }
+  .cta-btn small {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 4px;
+    opacity: 0.8;
+  }
+  .cta-note {
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 20px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #080f24;
+    color: #666;
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+  }
+  footer a { color: #888; text-decoration: underline; }
+
+  /* ─── DIVIDER ─── */
+  .gold-divider {
+    width: 40px;
+    height: 2px;
+    background: #C9A84C;
+    margin: 0 auto 40px;
+  }
+
+  /* ─── VOICES ─── */
+  .voices-bg { background: #f8f6f2; }
+  .voices-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .voice-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.09);
+  }
+  .voice-top {
+    position: relative;
+    height: 340px;
+    overflow: hidden;
+  }
+  .voice-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .voice-top-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(15,31,74,0.25) 0%, rgba(15,31,74,0.65) 100%);
+  }
+  .voice-headline {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    right: 24px;
+    font-size: clamp(20px, 5vw, 26px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.5;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+  .voice-tag {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: #fff;
+    border: 2px solid #C9A84C;
+    border-radius: 4px;
+    padding: 8px 20px;
+    text-align: center;
+  }
+  .voice-tag-age {
+    font-size: 22px;
+    font-weight: 900;
+    color: #0f1f4a;
+    line-height: 1.2;
+  }
+  .voice-tag-name {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+  }
+  .voice-bottom {
+    background: linear-gradient(135deg, #C9A84C, #d4b458);
+    padding: 28px 28px 24px;
+  }
+  .voice-text {
+    font-size: clamp(15px, 3.8vw, 17px);
+    color: #1a1a1a;
+    line-height: 2.0;
+    font-weight: 500;
+  }
+
+  /* ─── PAIN ─── */
+  .pain-bg {
+    background: #1a1a2e;
+    padding: 64px 0 0;
+  }
+  .pain-title {
+    text-align: center;
+    font-size: clamp(22px, 5.5vw, 30px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.6;
+    padding: 0 24px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .pain-title::before, .pain-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: #C9A84C;
+    margin: 10px auto;
+  }
+  .pain-item {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .pain-item img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(60%) brightness(0.5);
+  }
+  .pain-item-content {
+    position: relative;
+    z-index: 1;
+    padding: 24px 28px;
+    width: 100%;
+  }
+  .pain-item:nth-child(even) .pain-item-content { text-align: right; }
+  .pain-sub {
+    font-size: 13px;
+    color: #C9A84C;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+  .pain-main {
+    font-size: clamp(19px, 5vw, 26px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.5;
+    border-bottom: 2px dashed rgba(201,168,76,0.5);
+    padding-bottom: 8px;
+    display: inline-block;
+  }
+
+  /* ─── OBSTACLE ─── */
+  .obstacle-bg {
+    background: linear-gradient(180deg, #1a1a2e 0%, #2a2a3e 100%);
+    padding: 60px 24px;
+  }
+  .obstacle-demo {
+    text-align: center;
+    font-size: clamp(24px, 6vw, 34px);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 36px;
+    position: relative;
+  }
+  .obstacle-demo::before {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 40px;
+    background: #C9A84C;
+    margin: 0 auto 16px;
+  }
+  .obstacle-list {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .obstacle-card {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    height: 140px;
+    display: flex;
+    align-items: center;
+  }
+  .obstacle-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.45);
+  }
+  .obstacle-text {
+    position: relative;
+    z-index: 1;
+    padding: 20px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .obstacle-check {
+    background: #C9A84C;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 900;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .obstacle-copy {
+    font-size: clamp(14px, 3.8vw, 17px);
+    color: #fff;
+    line-height: 1.7;
+  }
+  .obstacle-copy strong {
+    font-size: clamp(17px, 4.5vw, 20px);
+    display: block;
+  }
+  .obstacle-cta {
+    text-align: center;
+    margin-top: 48px;
+  }
+  .obstacle-cta p {
+    font-size: clamp(20px, 5.5vw, 28px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.7;
+  }
+  .obstacle-cta p span { color: #C9A84C; }
+  .obstacle-cta p em {
+    font-style: normal;
+    font-size: clamp(14px, 3.5vw, 17px);
+    color: #aaa;
+    display: block;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+
+  /* ─── SOCIAL PROOF ─── */
+  .proof-bar {
+    background: linear-gradient(135deg, #C9A84C, #e8c96a);
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .proof-bar p {
+    color: #0f1f4a;
+    font-size: clamp(15px, 3.8vw, 19px);
+    font-weight: 800;
+    letter-spacing: 0.03em;
+  }
+  .proof-bar span {
+    font-size: clamp(22px, 5.5vw, 30px);
+    font-weight: 900;
+  }
+
+  /* ─── FUTURE ─── */
+  .future-bg {
+    background: #f8f6f2;
+  }
+  .future-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .future-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+  }
+  .future-card:hover { transform: translateY(-4px); }
+  .future-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+  .future-card-body {
+    padding: 22px 20px;
+  }
+  .future-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f1f4a;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .future-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.8;
+  }
+  .future-card .gold-label {
+    display: inline-block;
+    background: #C9A84C;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 480px) {
+    .profile-card { flex-direction: column; align-items: center; text-align: center; }
+    .profile-tags { justify-content: center; }
+    .easy-grid { grid-template-columns: 1fr; }
+    .future-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <p class="hero-badge">FX 3-DAY FREE LESSON</p>
+  <h1>知らないから、<span>怖いだけ。</span></h1>
+  <p class="hero-sub">
+    3日間でFXの「わからない」が「わかった！」に変わります。<br>
+    参加費無料・ニックネームOK・Zoom受講。
+  </p>
+  <a href="https://line.me/ti/g2/fzOT0N8WXKkjrGf2c6yqvn6dyDfQ1BYA45Owmw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" class="hero-free" target="_blank">FX3日間無料レッスンに参加する</a>
+  <div class="hero-meta">
+    <span>参加費 無料</span>
+    <span>ニックネームOK</span>
+    <span>Zoom受講</span>
+  </div>
+</section>
+
+<!-- ─── PAIN ─── -->
+<div class="pain-bg">
+  <h2 class="pain-title">こんな風に思った<br>ことはありませんか？</h2>
+
+  <div class="pain-item">
+    <img src="https://images.unsplash.com/photo-1499557354967-2b2d8910bcca?w=800&h=400&fit=crop&auto=format" alt="">
+    <div class="pain-item-content">
+      <p class="pain-sub">貯金したいけど</p>
+      <p class="pain-main">本業の収入だけじゃ足りない</p>
+    </div>
+  </div>
+
+  <div class="pain-item">
+    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&auto=format" alt="">
+    <div class="pain-item-content" style="text-align:right;">
+      <p class="pain-sub">将来のことを考えると</p>
+      <p class="pain-main">今の収入で生活できるのかな</p>
+    </div>
+  </div>
+
+  <div class="pain-item">
+    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=400&fit=crop&auto=format" alt="">
+    <div class="pain-item-content">
+      <p class="pain-sub">結局、老後は貯金を崩しながら</p>
+      <p class="pain-main">我慢の生活を送るしかない</p>
+    </div>
+  </div>
+
+  <div class="pain-item">
+    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&auto=format" alt="">
+    <div class="pain-item-content" style="text-align:right;">
+      <p class="pain-sub">FXは気になるけど</p>
+      <p class="pain-main">やり方も、始め方も<br>分からないから心配</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── OBSTACLE ─── -->
+<div class="obstacle-bg">
+  <div class="obstacle-demo">だけど</div>
+  <div class="obstacle-list">
+
+    <div class="obstacle-card">
+      <img src="https://images.unsplash.com/photo-1586473219010-2ffc57b0d282?w=800&h=280&fit=crop&auto=format" alt="">
+      <div class="obstacle-text">
+        <div class="obstacle-check">✓</div>
+        <div class="obstacle-copy">
+          今の仕事をしながら
+          <strong>できる副業なんてあるのかな…</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="obstacle-card">
+      <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&h=280&fit=crop&auto=format" alt="">
+      <div class="obstacle-text">
+        <div class="obstacle-check">✓</div>
+        <div class="obstacle-copy">
+          FXを習いたいけど
+          <strong>どれも高額で払えない…</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="obstacle-card">
+      <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=280&fit=crop&auto=format" alt="">
+      <div class="obstacle-text">
+        <div class="obstacle-check">✓</div>
+        <div class="obstacle-copy">
+          特別なスキルがない自分が
+          <strong>本当にできるようになるのかな…</strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="obstacle-cta">
+    <p>
+      でも<br>
+      <span>自分には無理かも</span>と<br>
+      このまま諦めますか？
+      <em>その悩み、3日間で解決できます。</em>
+    </p>
+  </div>
+</div>
+
+<!-- ─── SOCIAL PROOF ─── -->
+<div class="proof-bar">
+  <p>これまでの累計参加者 <span>1,000人以上</span> が無料レッスンを受講しています。</p>
+</div>
+
+<!-- ─── FOR WHO ─── -->
+<div class="forwho-bg">
+  <div class="section">
+    <p class="section-label">For You</p>
+    <h2 class="section-title">こんな方に<span>おすすめの</span>レッスンです</h2>
+    <div class="gold-divider"></div>
+    <div class="forwho-list">
+      <div class="forwho-item">投資やお金の勉強に興味がある方</div>
+      <div class="forwho-item">将来のために何か始めたいと思っている方</div>
+      <div class="forwho-item">説明会を聞いたけど入学を迷っている方</div>
+      <div class="forwho-item">FXって難しそう…と思っているけど気になっている方</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── COMPARISON ─── -->
+<div class="comparison-bg">
+  <div class="section">
+    <p class="section-label">Why FX?</p>
+    <h2 class="section-title">副業よりも<span>FXスキル習得</span>が<br>おすすめな理由</h2>
+    <div class="gold-divider"></div>
+
+    <div class="lead-copy">
+      <p><span class="box-word">お金の問題を解決したい</span> と思った時に</p>
+      <p style="margin-top:12px;font-size:clamp(17px,4.5vw,22px);font-weight:700;color:#333;">
+        <span style="color:#C9A84C;font-weight:900;">副業</span>を考える人は多い
+      </p>
+      <span class="demo">でも</span>
+      <p class="big-claim">
+        副業よりも<span>FXトレーダー</span>なら<br>
+        「時間・場所・収入」に縛られず<br>
+        ずっと自由に働ける！
+      </p>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th class="th-label"></th>
+            <th class="th-fx">FXスキル</th>
+            <th class="th-side">副業</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-label">結果が出る<br>期間</td>
+            <td class="td-fx">
+              <div class="comp-circle good">◎</div><br>
+              最短2か月〜<br>スキマ時間で可能！
+            </td>
+            <td class="td-side">
+              <div class="comp-circle bad">△</div><br>
+              1年〜<br>収益化が難しい
+            </td>
+          </tr>
+          <tr>
+            <td class="td-label">仕事の<br>選択肢</td>
+            <td class="td-fx">
+              <div class="comp-circle good">◎</div><br>
+              トレーダー・在宅ワーク・<br>起業など選択肢がたくさん
+            </td>
+            <td class="td-side">
+              <div class="comp-circle bad">△</div><br>
+              時間がかかるので<br>継続しにくい
+            </td>
+          </tr>
+          <tr>
+            <td class="td-label">収入</td>
+            <td class="td-fx">
+              <div class="comp-circle good">◎</div><br>
+              スキル次第で<br>収入は青天井！
+            </td>
+            <td class="td-side">
+              <div class="comp-circle bad">△</div><br>
+              ライバルが多い！<br>安定しない
+            </td>
+          </tr>
+          <tr>
+            <td class="td-label">継続できる<br>期間</td>
+            <td class="td-fx">
+              <div class="comp-circle good">◎</div><br>
+              スキルがある限り<br>ずっと続けられる！
+            </td>
+            <td class="td-side">
+              <div class="comp-circle bad">△</div><br>
+              体と時間の限界で<br>収入に縛りあり
+            </td>
+          </tr>
+          <tr>
+            <td class="td-label">自由度</td>
+            <td class="td-fx">
+              <div class="comp-circle good">◎</div><br>
+              スマホ1台あれば<br>どこでも可能！
+            </td>
+            <td class="td-side">
+              <div class="comp-circle bad">✕</div><br>
+              決まった作業があり<br>時間がかかる
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ─── DAYS ─── -->
+<div class="section">
+  <p class="section-label">Curriculum</p>
+  <h2 class="section-title">3日間の<span>レッスン内容</span></h2>
+  <div class="gold-divider"></div>
+  <div class="days-grid">
+
+    <div class="day-card">
+      <div class="day-header">
+        <span class="day-num">Day 1</span>
+        <span class="day-title">今なぜ投資をやるべきなのか</span>
+      </div>
+      <div class="day-body">
+        これからの時代、お金とどう向き合うべきか。<br>
+        「やらないリスク」を知ることで、最初の一歩が軽くなります。
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header">
+        <span class="day-num">Day 2</span>
+        <span class="day-title">FXの仕組みと、失敗しない始め方</span>
+      </div>
+      <div class="day-body">
+        FXって何？どうやって動く？<br>
+        初心者が最初につまずくポイントと、安全に始めるための基礎知識をお伝えします。
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header">
+        <span class="day-num">Day 3</span>
+        <span class="day-title">先輩の声 ＆ 学校説明会</span>
+      </div>
+      <div class="day-body">
+        実際に学んでいる先輩たちのリアルな声をお届け。<br>
+        「自分でもできるかも」という感覚を持って帰ってください。
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── EASY ─── -->
+<div class="easy-bg">
+  <div class="section">
+    <p class="section-label">Easy to Join</p>
+    <h2 class="section-title">無料レッスンに<span>参加しやすい3つの理由</span></h2>
+    <div class="gold-divider" style="border-color:#C9A84C;"></div>
+    <div class="easy-grid">
+      <div class="easy-card">
+        <span class="easy-icon">💰</span>
+        <h3>参加費 無料</h3>
+        <p>3日間すべて<br>完全無料で受講できます</p>
+      </div>
+      <div class="easy-card">
+        <span class="easy-icon">😊</span>
+        <h3>ニックネームOK</h3>
+        <p>本名不要。<br>気軽に参加できます</p>
+      </div>
+      <div class="easy-card">
+        <span class="easy-icon">💻</span>
+        <h3>Zoom受講</h3>
+        <p>自宅から参加OK。<br>LINEオープンチャットで受講</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FUTURE ─── -->
+<div class="future-bg">
+  <div class="section">
+    <p class="section-label">Your Future</p>
+    <h2 class="section-title">FXを知ると、<span>未来が変わる</span></h2>
+    <div class="gold-divider"></div>
+    <div class="future-grid">
+
+      <div class="future-card">
+        <img class="future-card-img" src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=360&fit=crop&auto=format" alt="子供と一緒に笑顔の親">
+        <div class="future-card-body">
+          <span class="gold-label">教育費の不安</span>
+          <h3>子供の将来が<br>お金で左右されない</h3>
+          <p>教育費・習い事・大学進学…<br>「お金が足りないかも」という不安が、知識ひとつで軽くなります。</p>
+        </div>
+      </div>
+
+      <div class="future-card">
+        <img class="future-card-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=360&fit=crop&auto=format" alt="リゾートビーチ">
+        <div class="future-card-body">
+          <span class="gold-label">生活の余裕</span>
+          <h3>旅行や趣味に<br>躊躇なく使えるようになる</h3>
+          <p>「これ、買っていいかな…」そんな迷いが減り、お金を楽しむ感覚が戻ってきます。</p>
+        </div>
+      </div>
+
+      <div class="future-card">
+        <img class="future-card-img" src="https://images.unsplash.com/photo-1560184897-ae75f418493e?w=600&h=360&fit=crop&auto=format" alt="ゆったりとした暮らし">
+        <div class="future-card-body">
+          <span class="gold-label">老後の備え</span>
+          <h3>将来のお金が<br>じわじわ育っていく安心感</h3>
+          <p>老後2,000万円問題も、今から動けば怖くない。<br>お金に働いてもらう仕組みをつくります。</p>
+        </div>
+      </div>
+
+      <div class="future-card">
+        <img class="future-card-img" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=360&fit=crop&auto=format" alt="自由に仕事する女性">
+        <div class="future-card-body">
+          <span class="gold-label">仕事の選択肢</span>
+          <h3>「やりたい仕事」を<br>選べる自由が生まれる</h3>
+          <p>収入の柱がひとつ増えることで、嫌な仕事を我慢しなくてよくなります。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ─── VOICES ─── -->
+<div class="voices-bg">
+  <div class="section">
+    <p class="section-label">Voice</p>
+    <h2 class="section-title">参加者の<span>声</span></h2>
+    <div class="gold-divider"></div>
+    <div class="voices-grid">
+
+      <div class="voice-card">
+        <div class="voice-top">
+          <img src="voice1.jpg" alt="参加者Aさん">
+          <div class="voice-top-overlay"></div>
+          <p class="voice-headline">少額からでも、<br>自信を持って<br>スタートできた！</p>
+          <div class="voice-tag">
+            <p class="voice-tag-age">40代</p>
+            <p class="voice-tag-name">Aさん・会社員</p>
+          </div>
+        </div>
+        <div class="voice-bottom">
+          <p class="voice-text">副業に興味はあったけど、何から始めていいかわからなかったんです。この体験会を受けたことで、少額から始められる方法がわかり、自信を持ってFXをスタートできました！</p>
+        </div>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-top">
+          <img src="voice2.jpg" alt="参加者Bさん">
+          <div class="voice-top-overlay"></div>
+          <p class="voice-headline">「やってみよう」<br>という気持ちに<br>変わりました！</p>
+          <div class="voice-tag">
+            <p class="voice-tag-age">30代</p>
+            <p class="voice-tag-name">Bさん・主婦</p>
+          </div>
+        </div>
+        <div class="voice-bottom">
+          <p class="voice-text">説明会を聞いて気になったけど、入学するか迷っていました。無料だし、とりあえず参加してみたのがきっかけです。3日間で「やってみよう」という気持ちに変わりました。先輩の話が特によかったです！</p>
+        </div>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-top">
+          <img src="voice3.jpg" alt="参加者Cさん">
+          <div class="voice-top-overlay"></div>
+          <p class="voice-headline">頭の中が<br>すっきり整理<br>されました！</p>
+          <div class="voice-tag">
+            <p class="voice-tag-age">40代</p>
+            <p class="voice-tag-name">Cさん・2児の母</p>
+          </div>
+        </div>
+        <div class="voice-bottom">
+          <p class="voice-text">子供の教育費のために何かしなきゃと思いつつ、何から始めればいいかわからなくて。このレッスンで「なぜ投資が必要か」から順番に教えてもらえたので、頭の中が整理されました。Zoomで家から参加できるのも助かりました！</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ─── CTA ─── -->
+<section class="cta-section">
+  <p class="section-label" style="color:#C9A84C;">Join Us</p>
+  <h2 class="section-title" style="color:#fff;">まずは、<span>知ることから</span>始めよう。</h2>
+  <p class="cta-sub">
+    参加費無料・ニックネームOK・Zoom受講。<br>
+    LINEオープンチャットに参加するだけで受講できます。
+  </p>
+  <a href="https://line.me/ti/g2/fzOT0N8WXKkjrGf2c6yqvn6dyDfQ1BYA45Owmw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" class="cta-btn" target="_blank">
+    FX3日間無料レッスンに参加する
+    <small>LINEオープンチャットへ ▶</small>
+  </a>
+  <p class="cta-note">参加費は一切かかりません。いつでも退出できます。</p>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <p>© K-connect合同会社　津田慶子</p>
+  <p style="margin-top:8px;"><a href="https://my38p.com/lp/gxGpnlAi" target="_blank">プライバシーポリシー</a></p>
+</footer>
+
+</body>
+</html>
